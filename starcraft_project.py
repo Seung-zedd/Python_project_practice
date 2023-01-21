@@ -54,17 +54,19 @@ class Tank(AttackUnit):
     def set_seize_mode(self):
         if Tank.seize_developed == False:
             return # 개발이 안되있으면 아래의 명령문을 실행하지 않고 메소드를 탈출
-
+        
+       ### 시즈모드 개발 완료 ### (Tank.seize_developed == True: 가 숨겨져있음) 
+        
         # 현재 시즈모드가 아닐 때 -> 시즈모드
         if self.seize_mode == False:
             print(f"{self.name} : 시즈모드로 전환합니다.")
             self.damage *= 2
-            self.seize_mode == True
+            self.seize_mode = True
         # 현재 시즈모드일 때 -> 시즈모드 해제
         else:
             print(f"{self.name} : 시즈모드를 해제합니다.")
             self.damage /= 2
-            self.seize_mode == False
+            self.seize_mode = False
     
 
 # 비행유닛 클래스 : 드랍쉽
